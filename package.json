@@ -1,0 +1,26 @@
+{
+  "name": "starter-simple-node",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www --exec babel-node -e js"
+  },
+  "dependencies": {
+    "axios": "latest",
+    "cookie-parser": "latest",
+    "debug": "latest",
+    "express": "latest",
+    "express-handlebars": "latest",
+    "hbs": "latest",
+    "http-errors": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "nodemon": "latest",
+    "npm": "latest"
+  },
+  "devDependencies": {
+    "babel-cli": "latest",
+    "babel-preset-env": "latest",
+    "babel-preset-stage-0": "latest"
+  }
+}
