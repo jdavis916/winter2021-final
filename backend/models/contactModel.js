@@ -1,3 +1,5 @@
+//the schema for the contact form, also can use as an example
+
 //import express from "express";
 //import mongoose from "mongoose";
 //import mongoSanitize from "express-mongo-sanitize";
