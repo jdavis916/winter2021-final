@@ -5,7 +5,7 @@ import {
 	email,
 	about,
 	address
-} from '../stubs.js';
+} from '../stubs.js'; //importing stub data from stubs.js
 var express = require('express');
 var router = express.Router();
 let title = 'Rocko Fitness';
