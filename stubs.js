@@ -1,8 +1,8 @@
-let dispName = ''; //string
-let phone = 0; //number
-let testimonials = ''; //string
-let email = ''; //string
-let about = ''; //string
+let dispName = 'Nahom'; //string
+let phone = 8604776356; //number
+let testimonials = 'soccer player '; //string
+let email = 'girmaynahom686@gmail.com';  //string
+let about =  'playing sports'; //string
 let address = {
     'street': '123 Lorem Dr',
     'city': 'San jose',
