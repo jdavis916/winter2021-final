@@ -22,15 +22,15 @@ router.get('/', function(req, res, next) {
 //stub data debug, hit this route to see stubbed data
 .get('/stub', function(req, res, next) {
 	res.render('index', { 
-		title: title,
+		title: title, //page title
 		msg: 'Message',
 		pageMainClass: 'pgHome',
-		about: about,
-		testimonials: testimonials,
-		dispName: dispName,
-		email: email,
-		phone: phone,
-		address: address
+		about: about, //about paragraph
+		testimonials: testimonials, //testimonial quotes
+		dispName: dispName, //display name
+		email: email, //stub email
+		phone: phone, //stub phone
+		address: address //stub address
 
 	});
 });
