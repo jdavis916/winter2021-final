@@ -12,7 +12,6 @@ var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 
 var app = express();
-console.log(handlebars.create());
 //database name
 // var dbName = 'copFinal';
 // var dbConnection = mongoose.connection;
