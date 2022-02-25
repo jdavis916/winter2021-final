@@ -10,6 +10,7 @@ const mongoose = require('mongoose').set('debug', true);
 var express = require('express');
 var router = express.Router();
 let title = 'Rocko Fitness';
+const {body, validationResult } = require('express-validator');
 /*const db = mongoose.connection;
 console.log(db);*/
 

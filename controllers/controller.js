@@ -7,7 +7,21 @@ const { workoutSchema } = require('../backend/models/workoutModel');
 const { workoutForm } = require('../backend/models/planForm')
 const mongoose = require('mongoose').set('debug', true);
 const db = mongoose.connection;
-console.log(mongoose.collection);
+const {body, validationResult } = require('express-validator');
+
+//validator middlewares
+let sanitizeWorkout = [
+    body('bodyType').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('time').matches(/^[0-9]*$/).trim(),
+    body('goal').matches(/^[0-9]*$/).trim()
+];
+let sanitizeUser = [
+    body('fname').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('lname').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('email').isEmail().normalizeEmail([{gmail_remove_dots: true}]).trim(),
+    body('phone').matches(/^[a-zA-Z0-9 ]*$/).trim(),
+    body('dispName').matches(/^[a-zA-Z0-9 ]*$/).trim()
+];
 
 /*TODO: complete this query*/
 async function sendWorkout(req){
@@ -71,5 +85,7 @@ async function getWorkout(req, res){
   }*/
 module.exports = {
     sendWorkout,
-    getWorkout
+    getWorkout,
+    sanitizeUser,
+    sanitizeWorkout
 };  //export all your functions when complete
