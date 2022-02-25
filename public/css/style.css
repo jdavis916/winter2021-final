@@ -6,3 +6,13 @@ body {
 /*a {
   color: #00B7FF;
 }*/
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  /*this is to style social media buttons on footer*/
+}
