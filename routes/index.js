@@ -6,10 +6,12 @@ import {
 	about,
 	address
 } from '../stubs.js'; //importing stub data from stubs.js
+const mongoose = require('mongoose').set('debug', true);
 var express = require('express');
 var router = express.Router();
 let title = 'Rocko Fitness';
-
+/*const db = mongoose.connection;
+console.log(db);*/
 
 router
 /* GET home page */

@@ -17,6 +17,7 @@ import mongoose from 'mongoose';
 //import cors from 'cors';
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
+//var postRouter = require('./routes/posts');
 //var settingsRouter = require('./routes/settings');
 //var usersRouter = require('./routes/users');
 //var postRouter = require('./routes/posts');
