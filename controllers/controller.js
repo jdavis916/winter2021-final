@@ -1,4 +1,4 @@
-/*
+       /*
 this file will contain all calculations and logic applied
 to our data
 */
@@ -28,7 +28,11 @@ async function sendWorkout(req){
     const workout = new workoutForm({
         _id: mongoose.Types.ObjectId(),
         /*look at planForm.js for reference*/
-        body_type: req.body.bodyType,     // req.body.<value of form field from html>
+        body_type: req.body.bodyType, 
+             time: req.body.time,
+             goal: req.body.goal,
+             user: req.user.id
+            // req.body.<value of form field from html>
         /*complete the rest of the save object. Look at planForm.js for reference*/
 
         /*dont work below this line*/
