@@ -49,7 +49,7 @@ async function getWorkout(req, res){
     let time = req.body.time;
     let bodyType = req.body.bodyType;
     /*write a query to find plans that match the weight, time, and bodytype fromt the request*/
-    let workout = db.collection('workout_plans')/*work on this line*/.find({  }).then((resp)=>{
+    let workout = db.collection('workout_plans').find({weight_loss: weight, time: time, body_types: bodytype}).then((resp)=>{
     /*dont work below this line*/
         try{
             console.log(workout);
