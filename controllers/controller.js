@@ -3,8 +3,11 @@ this file will contain all calculations and logic applied
 to our data
 */
 const express = require('express');
-const { workoutSchema } = require('../backend/models/workoutModel');
-const { workoutForm } = require('../backend/models/planForm')
+//const { workoutSchema } = require('../backend/models/workoutModel');
+//const { workoutForm } = require('../backend/models/planForm')
+import Workout from '../backend/models/workoutModel';
+import PlanForm from '../backend/models/planForm';
+import res from 'express/lib/response';
 const mongoose = require('mongoose').set('debug', true);
 const db = mongoose.connection;
 const {body, validationResult } = require('express-validator');
@@ -24,23 +27,19 @@ let sanitizeUser = [
 ];
 
 /*TODO: complete this query*/
-async function sendWorkout(req){
-    const workout = new workoutForm({
+function sendWorkout(req, res){
+    const workout = new PlanForm({
         _id: mongoose.Types.ObjectId(),
-        /*look at planForm.js for reference*/
         body_type: req.body.bodyType, 
-             time: req.body.time,
-             goal: req.body.goal,
-             user: req.user.id
-            // req.body.<value of form field from html>
-        /*complete the rest of the save object. Look at planForm.js for reference*/
-
-        /*dont work below this line*/
+        time: req.body.time,
+        goal: req.body.goal,
+        //user: req.user.id
     });
-    workout.save().then(res =>{
-        console.log('save successful');
+    workout.save().then(result =>{
+        res.send('save successful.');
     }).catch(err => {
-        console.log(err)
+        console.log(err);
+        res.send(err);
     })
 }
 
@@ -48,9 +47,7 @@ async function getWorkout(req, res){
     let weight = req.body.weight;  //form input
     let time = req.body.time;
     let bodyType = req.body.bodyType;
-    /*write a query to find plans that match the weight, time, and bodytype fromt the request*/
-    let workout = db.collection('workout_plans').find({weight_loss: weight, time: time, body_types: bodytype}).then((resp)=>{
-    /*dont work below this line*/
+    let workout = db.collection('workout_plans').find({weight_loss: weight, time: time, body_types: bodyType}).then((resp)=>{
         try{
             console.log(workout);
         }catch(err){
