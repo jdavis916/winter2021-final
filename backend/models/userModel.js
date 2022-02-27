@@ -1,21 +1,20 @@
 //the schema for the user info
 import express from "express";
 import mongoose from "mongoose";
-let app = express();
 const Schema = mongoose.Schema;
-
+var passportLocalMongoose = require('passport-local-mongoose');
 //define schema below
-export const userSchema = new Schema({
+export const User = new Schema({
 	_id: Schema.Types.ObjectId,
-	fname: String,
-	lname: String,
-	phone: String,
-	email: String,
-	dispName: String,
-	password: String,
-	workout_plan: String,
+	fname: {type: String, required: true},
+	lname: {type: String, required: true},
+	phone: {type: String, required: true, strict: false},
+	email: {type: String, required: true},
+	username: String,
+	password: {type: String, required: true,strict: false},
+	workout_plan: {type: String, default: ''}
 });
+User.plugin(passportLocalMongoose);
+var UserModel = mongoose.model("users", User);
 
-var userModel = mongoose.model("contacts", contactSchema);
-
-module.exports = formModel; 
+module.exports = UserModel; 
