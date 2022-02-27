@@ -25,7 +25,7 @@ var postRouter = require('./routes/posts');
 
 var app = express();
 //database name
- var dbName = 'copFinal';
+ var dbName = 'cop_final';
  var dbConnection = mongoose.connection;
  var pw = encodeURIComponent('pw#321');
  var fullConnect;

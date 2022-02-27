@@ -36,24 +36,50 @@ function sendWorkout(req, res){
         //user: req.user.id
     });
     workout.save().then(result =>{
-        res.send('save successful.');
+        try{
+            //res.send(getWorkout(req, res));
+            console.log('save successful');
+        }catch(err){
+            console.log(err);
+        }
+       
     }).catch(err => {
         console.log(err);
-        res.send(err);
+        //res.send(err);
     })
 }
 
 async function getWorkout(req, res){
-    let weight = req.body.weight;  //form input
-    let time = req.body.time;
+    console.log('proof of connection: ' + db.collection('workout_plans'));
+    let weights = +(req.body.goal);  //form input
+    let times = +(req.body.time);
     let bodyType = req.body.bodyType;
-    let workout = db.collection('workout_plans').find({weight_loss: weight, time: time, body_types: bodyType}).then((resp)=>{
+    try{
+        db.collection('workout_plans').find({weight_loss: { $lte: weights}, time: { $lte: times }}).toArray(function(err,resp){
+            res.send(resp.length > 0 ? resp : 'no result');
+        });
+    }catch(err){
+        res.send(err);
+    }
+        
+    
+    
+    /*try{
+        //resp.length > 0 ? res.send(resp) : res.send('no result');
+        //console.log(workout);
+       
+    }catch(err){
+        console.log(err);
+    }*/
+    
+    
+    /*.then((resp)=>{
         try{
             console.log(workout);
         }catch(err){
             console.log(err);
         }  
-    })
+    })*/
     /*.catch((err)=>{
         console.log(err)
     })*/
