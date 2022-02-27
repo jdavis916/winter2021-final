@@ -16,6 +16,6 @@ export const userSchema = new Schema({
 	workout_plan: String,
 });
 
-var formModel = mongoose.model("contacts", contactSchema);
+var userModel = mongoose.model("contacts", contactSchema);
 
 module.exports = formModel; 
