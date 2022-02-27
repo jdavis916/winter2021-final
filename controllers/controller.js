@@ -26,7 +26,7 @@ let sanitizeUser = [
     body('dispName').matches(/^[a-zA-Z0-9 ]*$/).trim()
 ];
 
-/*TODO: complete this query*/
+//saves form inout to DB
 function sendWorkout(req, res){
     const workout = new PlanForm({
         _id: mongoose.Types.ObjectId(),
@@ -49,6 +49,7 @@ function sendWorkout(req, res){
     })
 }
 
+//retrieves workouts matching user input from DB
 async function getWorkout(req, res){
     console.log('proof of connection: ' + db.collection('workout_plans'));
     let weights = +(req.body.goal);  //form input
@@ -61,58 +62,26 @@ async function getWorkout(req, res){
     }catch(err){
         res.send(err);
     }
-        
-    
-    
-    /*try{
-        //resp.length > 0 ? res.send(resp) : res.send('no result');
-        //console.log(workout);
-       
-    }catch(err){
-        console.log(err);
-    }*/
-    
-    
-    /*.then((resp)=>{
-        try{
-            console.log(workout);
-        }catch(err){
-            console.log(err);
-        }  
-    })*/
-    /*.catch((err)=>{
-        console.log(err)
-    })*/
 }
 
-/*function(req,res,next){
-    const rental = new RideModel({
-    _id: mongoose.Types.ObjectId(),
-    user: req.user._id,
-    start: req.body.startTime,
-    end: req.body.endTime,
-    //price: req.body.,
-    car: req.body.car,
-    start_location: req.body.pickupLocation,
-    payment: req.body.payment
-    });
-    rental.save()
-    .then(result => {   
-        res.render('thankyou', {
-          pageMainClass: 'thankYou',
-          title: 'Thanks! Your rental has been successfully placed.',
-          details: details,
-          path: '/'
-        });
-    })
-    .catch(err => {
-        res.send(err);
-        console.log(err);
-    })
-  }*/
+//authentication middleware for workout page
+function authUser(req, res, next){
+	if (req.user == null){
+		res.status(403);
+		res.render('error', {
+			message: 'You need to sign in!',
+		})
+		return res.send('You need to sign in');
+	};
+
+	next();
+};
+    
+    
 module.exports = {
     sendWorkout,
     getWorkout,
     sanitizeUser,
-    sanitizeWorkout
+    sanitizeWorkout,
+    authUser
 };  //export all your functions when complete

@@ -4,10 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //var session = require('express-session');
-//var passport = require('passport');
+var passport = require('passport');
 //import session from 'express-session';
 //import MongoStore from 'connect-mongo';
-//var authenticate = require('./authenticate');
+var authenticate = require('./controllers/authenticate');
 
 //Loads the handlebars module
 const handlebars = require('express-handlebars');
