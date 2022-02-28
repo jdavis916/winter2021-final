@@ -1,18 +1,13 @@
 /* Raymond CSS */
 body {
   /*padding: 50px;*/
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-   background-color:#56494C;
-
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+  background-color:#56494C;
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   /*font-family:"Montserrat";*/
-
-
 }
-
 .mainNav {
   background-color: #847E89;
-  
 }
 
 .mainNav a{
