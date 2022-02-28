@@ -38,7 +38,7 @@ router
 		pageMainClass: 'pgSignup'
 	});
 })
-.get('/workout', authUser, function(req, res, next){
+.get('/workout', /*authUser*/, function(req, res, next){
 	//console.log(req.session.hasOwnProperty('passport'));
 	res.render('workout', {
 		title: title,
