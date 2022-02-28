@@ -1,16 +1,13 @@
 /*this is where form routes will be*/
-import {
-    sendWorkout,
-    sanitizeWorkout,
-    sanitizeUser,
-    getWorkout
-} from '../controllers/controller.js';
+import { sendWorkout, sanitizeWorkout, sanitizeUser, getWorkout } from '../controllers/controller.js';
 const express = require('express');
 const router = express.Router();
 const title = 'Rocko Fitness';
 const mongoose = require('mongoose').set('debug', true);
 const {body, validationResult } = require('express-validator');
 var passport = require('passport');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 import User from '../backend/models/userModel';
 router
 .post('/workoutPlans', sanitizeWorkout, function (req,res,next){
@@ -47,6 +44,7 @@ router
           //error = false;
           res.setHeader('Content-Type', 'application/json');
           res.send('successfully registered');
+
         });
       }
     })
