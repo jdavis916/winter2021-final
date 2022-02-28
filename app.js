@@ -4,10 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //var session = require('express-session');
-//var passport = require('passport');
+var passport = require('passport');
 //import session from 'express-session';
 //import MongoStore from 'connect-mongo';
-//var authenticate = require('./authenticate');
+var authenticate = require('./controllers/authenticate');
 
 //Loads the handlebars module
 const handlebars = require('express-handlebars');
@@ -17,7 +17,7 @@ import mongoose from 'mongoose';
 //import cors from 'cors';
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
-//var postRouter = require('./routes/posts');
+var postRouter = require('./routes/posts');
 //var settingsRouter = require('./routes/settings');
 //var usersRouter = require('./routes/users');
 //var postRouter = require('./routes/posts');
@@ -25,7 +25,7 @@ var adminRouter = require('./routes/admin');
 
 var app = express();
 //database name
- var dbName = 'copFinal';
+ var dbName = 'cop_final';
  var dbConnection = mongoose.connection;
  var pw = encodeURIComponent('pw#321');
  var fullConnect;
@@ -82,6 +82,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
+app.use('/submit', postRouter);
 
 //CORS setup
 //app.use(cors());
