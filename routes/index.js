@@ -6,17 +6,19 @@ import {
 	about,
 	address
 } from '../stubs.js'; //importing stub data from stubs.js
+import {  authUser, whoIs } from '../controllers/controller.js';  //authentication middleware and displayname
+import session from 'express-session';
 const mongoose = require('mongoose').set('debug', true);
 var express = require('express');
 var router = express.Router();
 let title = 'Rocko Fitness';
 const {body, validationResult } = require('express-validator');
-/*const db = mongoose.connection;
-console.log(db);*/
+
 
 router
 /* GET home page */
 .get('/', function(req, res, next) {
+	console.log(req.passport);
   res.render('index', { 
   	title: title,
   	msg: 'Message',
@@ -37,13 +39,28 @@ router
 		pageMainClass: 'pgSignup'
 	});
 })
-.get('/workout', function(req, res, next){
+.get('/workout', /*authUser, */function(req, res, next){
+	console.log(req.session);
 	res.render('workout', {
 		title: title,
 		pageTitle: 'Workout Plans',
 		pageMainClass: 'pgWorkout'
 	});
 })
+.get('/logout', (req, res) => {
+	if (req.session) {
+		console.log('before: ' + req.session);
+	  req.session.destroy();
+	  console.log('after: ' + req.session);
+	  res.clearCookie('session-id');
+	  res.redirect('/');
+	}
+	else {
+	  var err = new Error('You are not logged in!');
+	  err.status = 403;
+	  next(err);
+	}
+}) 
 .get('/stub', function(req, res, next) {    //stub data debug, hit this route to see stubbed data
 	res.render('index', { 
 		title: title, //page title
@@ -59,5 +76,4 @@ router
 	});
 })
 ;
-
 module.exports = router;
