@@ -66,7 +66,7 @@ async function getWorkout(req, res){
 
 //authentication middleware for workout page
 function authUser(req, res, next){
-	if (req.session.passport.user == null){
+	if (!req.session.hasOwnProperty('passport')){
 		res.status(403);
 		res.render('error', {
 			message: 'You need to sign in!',
@@ -79,7 +79,7 @@ function authUser(req, res, next){
    
 //gets display name
 function whoIs(req){
-    return (req.session.passport.user) ? req.session.passport.user : undefined;
+    return req.session.hasOwnProperty('passport') ? req.session.passport.user : undefined;
 }
     
 module.exports = {

@@ -6,6 +6,7 @@ import {
 	about,
 	address
 } from '../stubs.js'; //importing stub data from stubs.js
+import {  authUser, whoIs } from '../controllers/controller.js';  //authentication middleware and displayname
 const mongoose = require('mongoose').set('debug', true);
 var express = require('express');
 var router = express.Router();
@@ -37,8 +38,8 @@ router
 		pageMainClass: 'pgSignup'
 	});
 })
-.get('/workout', function(req, res, next){
-	console.log(req.session/*.passport.user*/);
+.get('/workout', authUser, function(req, res, next){
+	//console.log(req.session.hasOwnProperty('passport'));
 	res.render('workout', {
 		title: title,
 		pageTitle: 'Workout Plans',
