@@ -11,12 +11,12 @@ var express = require('express');
 var router = express.Router();
 let title = 'Rocko Fitness';
 const {body, validationResult } = require('express-validator');
-/*const db = mongoose.connection;
-console.log(db);*/
+4
 
 router
 /* GET home page */
 .get('/', function(req, res, next) {
+	console.log(req.passport);
   res.render('index', { 
   	title: title,
   	msg: 'Message',
@@ -38,6 +38,7 @@ router
 	});
 })
 .get('/workout', function(req, res, next){
+	console.log(req.session/*.passport.user*/);
 	res.render('workout', {
 		title: title,
 		pageTitle: 'Workout Plans',

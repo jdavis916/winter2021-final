@@ -3,10 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-//var session = require('express-session');
 var passport = require('passport');
-//import session from 'express-session';
-//import MongoStore from 'connect-mongo';
+import session from 'express-session';
+import MongoStore from 'connect-mongo';
 var authenticate = require('./controllers/authenticate');
 
 //Loads the handlebars module
@@ -55,10 +54,10 @@ app.engine('hbs', handlebars({
 	extname: 'hbs', 
 	defaultLayout: 'main'
 }));
-/*
+
 //session variable
-const sessionStore = MongoStore.create({ mongoUrl: `mongodb+srv://srrAdmin:${pw}@cluster0.nxxyb.mongodb.net/${dbName}?retryWrites=true&w=majority`,
- dbName: 'cop_final',
+const sessionStore = MongoStore.create({ mongoUrl: `mongodb+srv://srrAdmin:${pw}@cluster0.b1dfu.mongodb.net/${dbName}?retryWrites=true&w=majority`,
+ dbName: dbName,
 collectionName: 'sessions'});
 
 //assigns the client an ID stored on the server
@@ -73,7 +72,7 @@ app.use(session({
   	maxAge: 1000 * 60 * 60 * 24
   }
 }));
-*/ 
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -66,7 +66,7 @@ async function getWorkout(req, res){
 
 //authentication middleware for workout page
 function authUser(req, res, next){
-	if (req.user == null){
+	if (req.session.passport.user == null){
 		res.status(403);
 		res.render('error', {
 			message: 'You need to sign in!',
@@ -76,12 +76,17 @@ function authUser(req, res, next){
 
 	next();
 };
-    
+   
+//gets display name
+function whoIs(req){
+    return (req.session.passport.user) ? req.session.passport.user : undefined;
+}
     
 module.exports = {
     sendWorkout,
     getWorkout,
     sanitizeUser,
     sanitizeWorkout,
-    authUser
+    authUser,
+    whoIs
 };  //export all your functions when complete

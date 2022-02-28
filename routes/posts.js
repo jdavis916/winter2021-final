@@ -57,7 +57,7 @@ router
       //console.log(JSON.stringify(req.headers));
       res.setHeader('Content-Type', 'application/x-www-form-urlencoded');
       res.statusCode = 200;
-      res.send('logged in!');
+      res.redirect('/workout');
       //window.location.reload();
   
     }catch(err){
