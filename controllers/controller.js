@@ -3,11 +3,7 @@ this file will contain all calculations and logic applied
 to our data
 */
 const express = require('express');
-//const { workoutSchema } = require('../backend/models/workoutModel');
-//const { workoutForm } = require('../backend/models/planForm')
-import Workout from '../backend/models/workoutModel';
 import PlanForm from '../backend/models/planForm';
-import res from 'express/lib/response';
 const mongoose = require('mongoose').set('debug', true);
 const db = mongoose.connection;
 const {body, validationResult } = require('express-validator');
@@ -33,7 +29,7 @@ function sendWorkout(req, res){
         body_type: req.body.bodyType, 
         time: req.body.time,
         goal: req.body.goal,
-        //user: req.user.id
+        user: req.session.passport.user
     });
     workout.save().then(result =>{
         try{
