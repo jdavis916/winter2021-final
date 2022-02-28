@@ -3,8 +3,11 @@ this file will contain all calculations and logic applied
 to our data
 */
 const express = require('express');
-const { workoutSchema } = require('../backend/models/workoutModel');
-const { workoutForm } = require('../backend/models/planForm')
+//const { workoutSchema } = require('../backend/models/workoutModel');
+//const { workoutForm } = require('../backend/models/planForm')
+import Workout from '../backend/models/workoutModel';
+import PlanForm from '../backend/models/planForm';
+import res from 'express/lib/response';
 const mongoose = require('mongoose').set('debug', true);
 const db = mongoose.connection;
 const {body, validationResult } = require('express-validator');
@@ -23,73 +26,67 @@ let sanitizeUser = [
     body('dispName').matches(/^[a-zA-Z0-9 ]*$/).trim()
 ];
 
-/*TODO: complete this query*/
-async function sendWorkout(req){
-    const workout = new workoutForm({
+//saves form inout to DB
+function sendWorkout(req, res){
+    const workout = new PlanForm({
         _id: mongoose.Types.ObjectId(),
-        /*look at planForm.js for reference*/
         body_type: req.body.bodyType, 
-             time: req.body.time,
-             goal: req.body.goal,
-             user: req.user.id
-            // req.body.<value of form field from html>
-        /*complete the rest of the save object. Look at planForm.js for reference*/
-
-        /*dont work below this line*/
+        time: req.body.time,
+        goal: req.body.goal,
+        //user: req.user.id
     });
-    workout.save().then(res =>{
-        console.log('save successful');
-    }).catch(err => {
-        console.log(err)
-    })
-}
-
-async function getWorkout(req, res){
-    let weight = req.body.weight;  //form input
-    let time = req.body.time;
-    let bodyType = req.body.bodyType;
-    /*write a query to find plans that match the weight, time, and bodytype fromt the request*/
-    let workout = db.collection('workout_plans').find({weight_loss: weight, time: time, body_types: bodytype}).then((resp)=>{
-    /*dont work below this line*/
+    workout.save().then(result =>{
         try{
-            console.log(workout);
+            //res.send(getWorkout(req, res));
+            console.log('save successful');
         }catch(err){
             console.log(err);
-        }  
+        }
+       
+    }).catch(err => {
+        console.log(err);
+        //res.send(err);
     })
-    /*.catch((err)=>{
-        console.log(err)
-    })*/
 }
 
-/*function(req,res,next){
-    const rental = new RideModel({
-    _id: mongoose.Types.ObjectId(),
-    user: req.user._id,
-    start: req.body.startTime,
-    end: req.body.endTime,
-    //price: req.body.,
-    car: req.body.car,
-    start_location: req.body.pickupLocation,
-    payment: req.body.payment
-    });
-    rental.save()
-    .then(result => {   
-        res.render('thankyou', {
-          pageMainClass: 'thankYou',
-          title: 'Thanks! Your rental has been successfully placed.',
-          details: details,
-          path: '/'
+//retrieves workouts matching user input from DB
+async function getWorkout(req, res){
+    console.log('proof of connection: ' + db.collection('workout_plans'));
+    let weights = +(req.body.goal);  //form input
+    let times = +(req.body.time);
+    let bodyType = req.body.bodyType;
+    try{
+        db.collection('workout_plans').find({weight_loss: { $lte: weights}, time: { $lte: times }}).toArray(function(err,resp){
+            res.send(resp.length > 0 ? resp : 'no result');
         });
-    })
-    .catch(err => {
+    }catch(err){
         res.send(err);
-        console.log(err);
-    })
-  }*/
+    }
+}
+
+//authentication middleware for workout page
+function authUser(req, res, next){
+	if (!req.session.hasOwnProperty('passport')){
+		res.status(403);
+		res.render('error', {
+			message: 'You need to sign in!',
+		})
+		return res.send('You need to sign in');
+	};
+
+	next();
+};
+   
+//gets display name
+function whoIs(req){
+    return req.session.hasOwnProperty('passport') ? req.session.passport.user : undefined;
+}
+    
 module.exports = {
     sendWorkout,
     getWorkout,
     sanitizeUser,
-    sanitizeWorkout
+    sanitizeWorkout,
+    authUser,
+    whoIs
 };  //export all your functions when complete
