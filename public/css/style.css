@@ -1,11 +1,23 @@
+/* Raymond CSS */
 body {
   /*padding: 50px;*/
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  font-family:"Montserrat";
+
 
 }
 
+.mainNav {
+  background-color: #847E89;
+  
+}
+
+.mainNav a{
+  color: white;
+
+}
 h3 {
-  font-family:"Montserrat";
+ 
 
 }
 
@@ -19,70 +31,127 @@ footer {
 font-family: "Oxygen";
 background-color:  #847E89;
 color: white;
+padding-top: 20px;
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 20px;
 
 }
 
-
+/*
 div {
 font-family: "Oxygen";
 background-color:  #56494C;
 color: white;
 
 }
-
+*/
 
 /* header link */
+/*
 .container-fluid a {
    color: white;
 }
+*/
 
 /* header */
+/*
 .container-fluid {
-font-family: "Oxygen";
 background-color:  #847E89;
 color: white;
 
 }
-
+*/
 
 /*a {
   color: #00B7FF;
 }*/
 
-.fa {
-  padding: 20px;
+.socialArea a {
+  padding: 10px;
   font-size: 30px;
-  width: 30px;
+  width: 50px;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
+  color: white;
   /*this is to style social media buttons on footer*/
 }
 
 /* Add a hover effect if you want */
-.fa:hover {
+.socialArea a:hover {
   opacity: 0.7;
 }
 
 /* Set a specific color for each brand */
 
 /* Facebook */
-.fa-facebook {
+.socialArea a.fb {
   background: #3B5998;
-  color: white;
+  
 }
 
 /* Twitter */
-.fa-twitter {
+.socialArea a.tw{
   background: #55ACEE;
-  color: white;
+  
 }
 
 /* Instagram */
-.fa-instagram {
+.socialArea a.ig{
   background: #125688;
-  color: white;
+ 
 }
+
+
+/* test */
+
+
+/*
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+
+html { width: 100%; height:100%; overflow:hidden; }
+*/
+
+.login { 
+ /* position: absolute; */
+ /* top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+  width:300px;
+  height:300px; */
+  border: 1px solid #000000;
+}
+
+.login h1 { 
+  color: #fff; 
+  text-shadow: 0 0 0px rgba(0,0,0,0.3); 
+  letter-spacing:1px; 
+  text-align:center; 
+}
+
+input { 
+  width: 100%; 
+  margin-bottom: 10px; 
+  background: rgba(0,0,0,0.3);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 0 0 0 rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  -ms-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+/* End Raymond CSS */ 
+
 .text-center {
   text-align: center;
 }
