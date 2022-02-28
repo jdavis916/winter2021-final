@@ -6,17 +6,18 @@ import {
 	about,
 	address
 } from '../stubs.js'; //importing stub data from stubs.js
+import {  authUser, whoIs } from '../controllers/controller.js';  //authentication middleware and displayname
 const mongoose = require('mongoose').set('debug', true);
 var express = require('express');
 var router = express.Router();
 let title = 'Rocko Fitness';
 const {body, validationResult } = require('express-validator');
-/*const db = mongoose.connection;
-console.log(db);*/
+4
 
 router
 /* GET home page */
 .get('/', function(req, res, next) {
+	console.log(req.passport);
   res.render('index', { 
   	title: title,
   	msg: 'Message',
@@ -37,7 +38,8 @@ router
 		pageMainClass: 'pgSignup'
 	});
 })
-.get('/workout', function(req, res, next){
+.get('/workout', authUser, function(req, res, next){
+	//console.log(req.session.hasOwnProperty('passport'));
 	res.render('workout', {
 		title: title,
 		pageTitle: 'Workout Plans',
