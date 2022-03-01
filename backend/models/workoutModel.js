@@ -8,14 +8,10 @@ const Schema = mongoose.Schema;
 
 export const workoutSchema = new Schema({
 	_id: Schema.Types.ObjectId,
-    body_types: [
-        {
-            _id: Schema.Types.ObjectId,
-           name: String
-        }
-    ],
+    body_type: String,
     time: Number,
-    weight_loss: Number
+    weight_loss: Number,
+    desc: String
 });
 
 var workoutModel = mongoose.model("workout_plans", workoutSchema);

@@ -53,11 +53,17 @@
         <a href="/workout" class="nav-link" href="#">Workout Plan</a>
       </li>
       <li class="nav-item">
+        {{#if who}}
+        <a href="/logout" class="nav-link" href="#">Logout</a>
+        {{else}}
         <a href="/signin" class="nav-link" href="#">Login</a>
+        {{/if}}
       </li>
+      {{#unless who}}
       <li class="nav-item">
         <a href="/signup" class="nav-link" href="#">Signup</a>
       </li>
+      {{/unless}}
     </ul>
   </div>
 
