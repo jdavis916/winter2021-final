@@ -15,6 +15,7 @@ function makeUser(req, res, next){
         username: req.body.username,
         password: hashedPw,
         phone: req.body.phone,
+        workout_plan: req.body.workout_plan
       }), req.body.password, ((err, user)=>{
         if(err){
           console.log(req.password);

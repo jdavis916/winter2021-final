@@ -22,29 +22,33 @@ router
   res.render('index', { 
   	title: title,
   	msg: 'Message',
-  	pageMainClass: 'pgHome'
+  	pageMainClass: 'pgHome',
+	who: whoIs(req)
   });
 })
 .get('/signin', function(req, res, next){
 	res.render('signin', {
 		title: title,
 		pageTitle: 'Sign In',
-		pageMainClass: 'pgSignin'
+		pageMainClass: 'pgSignin',
+		who: whoIs(req)
 	});
 })
 .get('/signup', function(req, res, next){
 	res.render('signup', {
 		title: title,
 		pageTitle: 'Sign Up',
-		pageMainClass: 'pgSignup'
+		pageMainClass: 'pgSignup',
+		who: whoIs(req)
 	});
 })
-.get('/workout', /*authUser, */function(req, res, next){
+.get('/workout', authUser, function(req, res, next){
 	console.log(req.session);
 	res.render('workout', {
 		title: title,
 		pageTitle: 'Workout Plans',
-		pageMainClass: 'pgWorkout'
+		pageMainClass: 'pgWorkout',
+		who: whoIs(req)
 	});
 })
 .get('/logout', (req, res) => {
