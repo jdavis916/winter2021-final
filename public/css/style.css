@@ -6,6 +6,9 @@ body {
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   /*font-family:"Montserrat";*/
 }
+main{
+
+}
 .mainNav {
   background-color: #847E89;
 }
@@ -178,12 +181,6 @@ input {
 }
 
 /* Style the container for inputs */
-.container {
-  width: 300px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  padding: 20px;
-}
 
 /* The message box is shown only when the user clicks on the password field */
 #message {
@@ -275,30 +272,8 @@ span.price {
   margin: 0 -16px;
 }
 
-.col-25 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-}
-
-.col-50 {
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%;
-}
-
-.col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-}
-
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
-
-.container {
+.pgWorkout{
   background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
 }
@@ -357,11 +332,12 @@ span.price {
 .custom-select {
   position: relative;
   font-family: Arial;
+  width: 200px;
 }
-
-.custom-select select {
-  display: none; /*hide original SELECT element: */
-}
+ /*hide original SELECT element: */
+/*.custom-select select {
+  display: none;
+}*/
 
 .select-selected {
   background-color: DodgerBlue;
@@ -420,7 +396,7 @@ span.price {
   color: var(--c2);
 }
 .mainNav{
-  background-color; var(--c6)
+  background-color: var(--c6);
 }
 .text-center {
   text-align: center;
@@ -449,12 +425,6 @@ input {
 }
 
 /* Style the container for inputs */
-.container {
-  width: 300px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  padding: 20px;
-}
 
 /* The message box is shown only when the user clicks on the password field */
 #message {
@@ -542,33 +512,7 @@ span.price {
   margin: 0 -16px;
 }
 
-.col-25 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-}
 
-.col-50 {
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%;
-}
-
-.col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-}
-
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
-
-.container {
-  background-color: #f2f2f2;
-  padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-}
 
 input[type=text] {
   width: 100%;
