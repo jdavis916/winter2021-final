@@ -136,6 +136,16 @@ html { width: 100%; height:100%; overflow:hidden; }
   text-align:center; 
 }
 
+/* centering signup/workout page
+.row {
+  text-align:center;
+
+}
+
+.col-12 {
+  text-align:center
+}
+*/
 input { 
   width: 100%; 
   margin-bottom: 10px; 
@@ -335,7 +345,7 @@ span.price {
 .custom-select {
   position: relative;
   font-family: Arial;
-  width: 200px;
+  width: 150px;
 }
  /*hide original SELECT element: */
 /*.custom-select select {
@@ -417,14 +427,14 @@ input {
   background-color: #f2f2f2;
 }
 
-/* Style the submit button */
+/* Style the signin button */
 #sub {
-  background-color: #007bff;
+  background-color: #56494C;
   color: white;
 }
 
 #sub:hover {
-  background-color: #0062cc;
+  background-color: #000000;
 }
 
 /* Style the container for inputs */
@@ -432,7 +442,7 @@ input {
 /* The message box is shown only when the user clicks on the password field */
 #message {
   display: none;
-  width: 300px;
+  width: 00px;
   margin: 0 auto;
   background: #f1f1f1;
   color: #000;
@@ -484,9 +494,9 @@ label {
 }
 
 
-
+/* log in button */
 .btn {
-  background-color: #04AA6D;
+  background-color: #56494C;
   color: white;
   padding: 12px;
   margin: 10px 0;
@@ -498,7 +508,7 @@ label {
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: #000000;
 }
 
 span.price {
@@ -536,8 +546,9 @@ label {
   font-size: 24px;
 }
 
+/* this is here twice
 .btn {
-  background-color: #04AA6D;
+  background-color: #56494C;
   color: white;
   padding: 12px;
   margin: 10px 0;
@@ -549,9 +560,9 @@ label {
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: #e8c23a;
 }
-
+*/
 span.price {
   float: right;
   color: grey;
