@@ -204,15 +204,38 @@ input {
   background-color: #f2f2f2;
 }
 
-/* Style the submit button */
+/* Style the submit on workout pagebutton */
 #sub {
-  background-color: #007bff;
+  background-color: #56494C;
   color: white;
 }
 
 #sub:hover {
-  background-color: #0062cc;
+  background-color: #000000;
 }
+
+/*submit button on work out page*/
+.btn-primary {
+    color: #fff;
+    background-color: #56494C;
+    border-color: #9FA4A9;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #000000;
+    border-color: #9FA4A9;
+}
+
+/*time goal box on work out page*/
+input[type=text] {
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #000000;
+}
+
 
 /* Style the container for inputs */
 
@@ -431,12 +454,15 @@ input {
   margin-top: 6px;
   margin-bottom: 16px;
   background-color: #f2f2f2;
+  color: #000000;
 }
 
 /* Style the signin button */
 #sub {
   background-color: #56494C;
   color: white;
+  width: 25%;
+
 }
 
 #sub:hover {
