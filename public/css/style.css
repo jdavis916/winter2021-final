@@ -79,6 +79,30 @@ color: white;
 .logo{
   max-width: 110px;
 }
+.footerLogo{
+  width: 300px;
+}
+.copyright{
+  text-align: center;
+}
+.copyright::before{
+  content: "\00A9";
+  margin-right: 2px;
+}
+.mapSection{
+  text-align: center;
+}
+/*.contactArea{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}*/
+.footerCol{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .socialArea a {
   padding: 10px;
   font-size: 30px;
@@ -581,7 +605,7 @@ label {
   font-size: 24px;
 }
 .contactHours{
-  text-align: right;
+  text-align: center;
 }
 /* this is here twice
 .btn {
