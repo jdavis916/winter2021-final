@@ -231,6 +231,8 @@ input {
     color: #fff;
     background-color: #56494C;
     border-color: #9FA4A9;
+    width: 25%;
+
 }
 .btn-primary:hover {
     color: #fff;
@@ -339,7 +341,7 @@ span.price {
 }
 
 input[type=text] {
-  width: 100%;
+  width: 50%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
