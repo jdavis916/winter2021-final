@@ -7,11 +7,20 @@ let workoutVars = {
 /*id="ecto"
 id="meso"
 id="endo"*/
+
 window.addEventListener('load', (event) => {
-    if(document.getElementsByClassName('pgWorkout')){
+    if(window.location.href === "http://localhost:3000/workout"){
         for(let i in workoutVars){
             showHide(workoutVars[i][0], workoutVars[i][1], workoutVars[i][2]);
         }
+    }
+    console.log('loaded');
+    if(window.location.href === "http://localhost:3000/error"){
+        console.log('onErrPage');
+        document.getElementById('goHome').addEventListener('click', function(){
+            console.log('go home clicked');
+            window.location.replace('/');
+        })
     }
 });
 function showHide(btn, ele, chk){

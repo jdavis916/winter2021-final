@@ -64,6 +64,15 @@ router
 	  err.status = 403;
 	  next(err);
 	}
+})
+.get('/error', function(req,res,next){
+	res.render('error', {
+		title: "Auth Error",
+		pageTitle: 'Auth Error',
+		pageMainClass: 'pgError',
+		errMsg: "You need to sign in!",
+		who: whoIs(req)
+	});
 }) 
 .get('/stub', function(req, res, next) {    //stub data debug, hit this route to see stubbed data
 	res.render('index', { 
