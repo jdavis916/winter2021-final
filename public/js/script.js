@@ -14,8 +14,21 @@ window.addEventListener('load', (event) => {
             showHide(workoutVars[i][0], workoutVars[i][1], workoutVars[i][2]);
         }
     }
-    console.log('loaded');
     if(window.location.href === "http://localhost:3000/error"){
+        console.log('onErrPage');
+        document.getElementById('goHome').addEventListener('click', function(){
+            console.log('go home clicked');
+            window.location.replace('/');
+        })
+    }
+    if(window.location.href === "http://localhost:3000/submit/workoutPlans"){
+        console.log('onResPage');
+        document.getElementById('goBack').addEventListener('click', function(){
+            console.log('go back clicked');
+            window.location.replace('/workout');
+        })
+    }
+    if(window.location.href === "http://localhost:3000/success"){
         console.log('onErrPage');
         document.getElementById('goHome').addEventListener('click', function(){
             console.log('go home clicked');
