@@ -630,6 +630,16 @@ label {
   background-color: #e8c23a;
 }
 */
+.pgError{
+  margin: 180px auto;
+}
+.goHome{
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+}
+
+
 span.price {
   float: right;
   color: grey;

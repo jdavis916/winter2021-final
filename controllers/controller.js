@@ -70,11 +70,17 @@ async function getWorkout(req, res){
 //authentication middleware for workout page
 function authUser(req, res, next){
 	if (!req.session.hasOwnProperty('passport')){
+        let err = 'You need to sign in!';
 		res.status(403);
-		res.render('error', {
-			message: 'You need to sign in!',
-		})
-		return res.send('You need to sign in');
+		/*res.render('error', {
+            title: "Auth Error",
+            pageTitle: 'Auth Error',
+            pageMainClass: 'pgError',
+            errMsg: err,
+            who: whoIs(req)
+        });*/
+        res.redirect('/error');
+		//return res.send('You need to sign in');
 	};
 
 	next();
