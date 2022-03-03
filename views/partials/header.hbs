@@ -43,8 +43,8 @@
     <!-- Links -->
     <ul class="navbar-nav align-items-center">
       <li class="nav-item navbar-brand">
-        <a href="/" class="nav-link" href="#">
-          <img src="./img/rocko_fitness.png" alt="rocko logo" class="img-fluid logo"/><!--<span>Rocko Fitness</span>-->
+        <a href="/" class="nav-link navii" href="#">
+          <img src="{{logoPath}}" alt="rocko logo" class="img-fluid logo"/><!--<span>Rocko Fitness</span>-->
         </a>
       </li>
       <!--
@@ -55,18 +55,18 @@
         <a href="#" class="nav-link" href="#">Locations</a>
       </li> -->
       <li class="nav-item">
-        <a href="/workout" class="nav-link" href="#">Workout Plan</a>
+        <a href="/workout" class="nav-link navii" href="#">Workout Plan</a>
       </li>
       <li class="nav-item">
         {{#if who}}
-        <a href="/logout" class="nav-link" href="#">Logout</a>
+        <a href="/logout" class="nav-link navii" href="#">Logout</a>
         {{else}}
-        <a href="/signin" class="nav-link" href="#">Login</a>
+        <a href="/signin" class="nav-link navii" href="#">Login</a>
         {{/if}}
       </li>
       {{#unless who}}
       <li class="nav-item">
-        <a href="/signup" class="nav-link" href="#">Signup</a>
+        <a href="/signup" class="nav-link navii" href="#">Signup</a>
       </li>
       {{/unless}}
     </ul>

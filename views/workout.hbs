@@ -1,6 +1,6 @@
 <main class="container {{pageMainClass}}">
   <section class="row">
-    <h1>{{pageTitle}}</h1>
+    <h1 class="text-center">Find Your Best Workout!</h1>
     <section class="col-12 form-container">
       
         <!--<div class="form-left">
@@ -20,49 +20,37 @@
         </div> -->
       <div class="row buttonwrapperSection">
         <div class="col-12">
-          <div class="col">
-            <h2>Choose body type</h2>
-            <figure class="bodyCard">
-              <div>
-                <img src="img/ecto.png" alt="ecto" style="width:100px; padding-bottom: 10px";/>
-              </div>
-              <div>
-                <button id="btnEctomorph" class="btnEctomorph">Ectomorph</button>
-              </div>
-            </figure>
-
-
-            <figure class="bodyCard">
-              <div>
-                <img src="img/endo.png" alt="ecto" style="width:100px; padding-bottom: 10px";/>
-              </div>
-              <div>
-                <button id="btnEndomorph" class="btnEndomorph">Endomorph</button>
-              </div>
-            </figure>
-
-
-
-            <figure class="bodyCard">
-              <div>
-                <img src="img/meso.png" alt="ecto" style="width:100px; padding-bottom: 10px";/>
-              </div>
-              <div>
-                <button id="btnMesomorph" class="btnMesomorph">Mesomorph</button>
-              </div>
-            </figure>
-
-
-
-
-
-<!--
-            <img src="img/meso.png" alt="meso" style="width:100px; padding-bottom: 10px";/><br>
-            <button id="btnMesomorph" class="btnMesomorph">Mesomorph</button><br>
-            <img src="img/endo.png" alt="endo" style="width:100px; padding-bottom: 10px";/><br>
-            <button id="btnEndomorph" class="btnEndomorph">Endomorph</button><br> -->
+          <div class="row">
+            <h2 class="text-center">Choose body type</h2>
+            <section class="bodyBox">
+              <figure class="bodyCard">
+                <div class="bodyCardImg">
+                  <img src="img/ecto.png" alt="ecto" style="width:100px; padding-bottom: 10px";/>
+                </div>
+                <div>
+                  <button id="btnEctomorph" class="btn btn-secondary bodyBtn">Ectomorph</button>
+                </div>
+              </figure>
+              <figure class="bodyCard">
+                <div class="bodyCardImg">
+                  <img src="img/endo.png" alt="ecto" style="width:100px; padding-bottom: 10px";/>
+                </div>
+                <div>
+                  <button id="btnEndomorph" class="btn btn-secondary bodyBtn">Endomorph</button>
+                </div>
+              </figure>
+              <figure class="bodyCard">
+                <div class="bodyCardImg">
+                  <img src="img/meso.png" alt="ecto" style="width:100px; padding-bottom: 10px";/>
+                </div>
+                <div>
+                  <button id="btnMesomorph" class="btn btn-secondary bodyBtn">Mesomorph</button>
+                </div>
+              </figure>
+            </section>
           </div>
-          <section id="ectomorph" class="col d-none secEctomorph">
+          <div class="row">
+            <section id="ectomorph" class="col d-none secEctomorph descSection">
               <h2>Ectomorph</h2>
               <ul>
                 <li>Typically skinny</li>
@@ -80,94 +68,88 @@
                 <li>Focus on big muscle groups</li>
                 <li>Eat before bed to prevent muscle catabolism</li>
               </ul>
-          </section>
-
-          <section id="mesomorph" class="col d-none secMesomorph">
-              <h2>Mesomorph</h2>
-              <ul>
-              <li>Athletic & rectangular shape</li>
-              <li>Hard body, defined muscles</li>
-              <li>Naturally strong</li>
-              <li>Gains muscle easily</li>
-              <li>Gains fat easier than ectomorph</li>
-              <li>Broad shoulders</li>
-              </ul>
-
-              <h2>Workout type</h2>
-              <ul>
-                <li>Cardio & weight training</li>
-                <li>Responds best to weight training</li>
-                <li>Watch calorie intake</li>
-              </ul>
-          </section>
-
-          <section id="endomorph" class="col d-none secEndomorph">
-              <h2>Endomorph</h2>
-              <ul>
-                <li>Soft & round body</li>
-                <li>Typically "short & stocky"</li>
+            </section>
+            <section id="mesomorph" class="col d-none secMesomorph descSection">
+                <h2>Mesomorph</h2>
+                <ul>
+                <li>Athletic & rectangular shape</li>
+                <li>Hard body, defined muscles</li>
+                <li>Naturally strong</li>
                 <li>Gains muscle easily</li>
-                <li>Gains fat very easily</li>
-                <li>Finds it hard to lose fat</li>
-                <li>Slow metabolism</li>
-                <li>Large shoulders</li>
-              </ul>
+                <li>Gains fat easier than ectomorph</li>
+                <li>Broad shoulders</li>
+                </ul>
 
-              <h2>Workout type</h2>
-              <ul>
-                <li>Always do cardio training and weight training</li>
-                <li>Watch calorie intake</li>
-              </ul>
-          </section>
-          
+                <h2>Workout type</h2>
+                <ul>
+                  <li>Cardio & weight training</li>
+                  <li>Responds best to weight training</li>
+                  <li>Watch calorie intake</li>
+                </ul>
+            </section>
+
+            <section id="endomorph" class="col d-none secEndomorph descSection">
+                <h2>Endomorph</h2>
+                <ul class="descList">
+                  <li>Soft & round body</li>
+                  <li>Typically "short & stocky"</li>
+                  <li>Gains muscle easily</li>
+                  <li>Gains fat very easily</li>
+                  <li>Finds it hard to lose fat</li>
+                  <li>Slow metabolism</li>
+                  <li>Large shoulders</li>
+                </ul>
+
+                <h2>Workout type</h2>
+                <ul class="descList">
+                  <li>Always do cardio training and weight training</li>
+                  <li>Watch calorie intake</li>
+                </ul>
+            </section>
+          </div>
         </div>
       </div>
+      <hr class="divider">
       <div class="row">
-        <form method="POST" class="col-12" action="/submit/workoutPlans">
+        <form method="POST" class="col-12 workoutForm" action="/submit/workoutPlans">
           <div class="d-none">
             <input type="checkbox" id="ecto" name="bodyType" value="Ectomorph">
             <input type="checkbox" id="meso" name="bodyType" value="Mesomorph">
             <input type="checkbox" id="endo" name="bodyType" value="Endomorph">
           </div>
-          <div class="select-weight" style="width:200px;">
-            <select name="goal">
-              <option value="0">Select goal weight loss:</option>
-              <option value="10">10 lbs</option>
-              <option value="20">20 lbs</option>
-              <option value="30">30 lbs</option>
-              <option value="40">40 lbs</option>
-              <option value="50">50 lbs</option>
-              <option value="60">60 lbs</option>
-              <option value="70">70 lbs</option>
-              <option value="80">80 lbs</option>
-              <option value="90">90 lbs</option>
-              <option value="100+">100+ lbs</option>
-            </select>
+          <div class="row select-weight">
+            <div class="col formFieldArea">
+              <label for="goal">Select Weight-loss Goal</label>
+              <select name="goal" id="goal">
+                <option value="0">Select goal weight loss:</option>
+                <option value="10">10 lbs</option>
+                <option value="20">20 lbs</option>
+                <option value="30">30 lbs</option>
+                <option value="40">40 lbs</option>
+                <option value="50">50 lbs</option>
+                <option value="60">60 lbs</option>
+                <option value="70">70 lbs</option>
+                <option value="80">80 lbs</option>
+                <option value="90">90 lbs</option>
+                <option value="100+">100+ lbs</option>
+              </select>
+            </div>
+            <div class="col formFieldArea">
+              <label for="time">Enter Time Constraint (in weeks)</label>
+              <input type="text" id="time" placeholder="Time" name="time">
+            </div>
           </div>
+          <hr class="divider">
           <div class="row">
-            <h2>Enter Time Constraint (in weeks)</h2>
-            <input type="text" placeholder="Time" name="time">
+              <input type="submit" class="btn-secondary worxSubmit" value="Submit">
           </div>
-          <input type="submit" class="btn-primary" value="Submit">
-          <!-- body_type: req.body.bodyType, 
-          time: req.body.time,
-          goal: req.body.goal, -->
         </form>
       </div>
+      
     </section>
+    
     <div class="btnBackWrapper d-none">
       <button id="btnBack" class="btnBack">Back</button>
-    </div>
-  </section>
-  <section class="row results">
-    <div class="col-12">
-      {{#each response}}
-      <h3>Plan ID: {{this._id}}</h3>
-      <div class="row workoutResp">
-        <p>Time: {{this.time}} weeks.</p>
-        <p>Description: {{this.desc}}</p>
-      </div>
-      {{/each}}
     </div>
   </section>
 </main>

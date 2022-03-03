@@ -8,6 +8,7 @@ import PlanForm from '../backend/models/planForm';
 const mongoose = require('mongoose').set('debug', true);
 const db = mongoose.connection;
 const {body, validationResult } = require('express-validator');
+let queryResult;
 import session from 'express-session';
 
 //validator middlewares
@@ -56,12 +57,20 @@ async function getWorkout(req, res){
     try{
         db.collection('workout_plans').find({weight_loss: { $lte: weights}, time: { $lte: times }, body_type: bodyType}).toArray(function(err,resp){
             //res.send(resp.length > 0 ? resp : 'no result');
-            console.log(resp[0].desc);
-            res.render('workout', {
-                pageMainClass: 'pgWorkout',
-                response: resp
+            //console.log(resp[0].desc);
+            //console.log(req);
+            /*resp.length > 0 ? queryResult = resp : queryResult = {'fail':'no result'};
+            console.log(queryResult);
+            res.redirect('/result');*/
+                res.render('result', {
+                    title: "Your Result",
+                    pageTitle: "Your Result",
+                    pageMainClass: 'pgResult',
+                    who: whoIs(req),
+                    response: resp,
+                    logoPath: '../img/rocko_fitness.png'
+                });
             });
-        });
     }catch(err){
         res.send(err);
     }
@@ -97,5 +106,6 @@ module.exports = {
     sanitizeUser,
     sanitizeWorkout,
     authUser,
-    whoIs
+    whoIs,
+    queryResult
 };  //export all your functions when complete

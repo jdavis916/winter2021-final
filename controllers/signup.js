@@ -28,7 +28,7 @@ function makeUser(req, res, next){
           })(req, res, () => {
             //error = false;
             res.setHeader('Content-Type', 'application/json');
-            res.send('successfully registered');
+            res.redirect('/success');
   
           });
         }

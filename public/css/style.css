@@ -10,6 +10,9 @@ body {
 main{
   /*min-height: calc(103vh - 180px);*/
 }
+ul{
+  list-style-type: none;
+}
 .mainNav {
   background-color: #847E89;
 }
@@ -70,12 +73,36 @@ color: white;
 }
 */
 .bodyCard{
-  border: 2px solid black;
   border-radius: 5px;
+  background: #FFF;
+  text-align: center;
+  height: 250px;
+  width: 150px;
+  box-shadow: 2px 2px 2px #878787;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.bodyCardImg{
+  text-align:center;
+  margin-top: 5px;
+  border: 2px solid #565656;
+  border-radius: 5px;
+}
+.bodyBtn{
+  padding: 5px;
+  margin-bottom: 5px;
 }
 /*a {
   color: #00B7FF;
 }*/
+.navii{
+  font-size:1.2rem;
+}
+.navii:hover{
+  text-decoration: underline;
+}
 .logo{
   max-width: 110px;
 }
@@ -149,7 +176,7 @@ color: white;
 html { width: 100%; height:100%; overflow:hidden; }
 */
 
-.login { 
+.login, .signup { 
  /* position: absolute; */
  /* top: 50%;
   left: 50%;
@@ -180,12 +207,15 @@ html { width: 100%; height:100%; overflow:hidden; }
   text-align: center;
   margin: 40px;
 }
-
-.bodyCard {
-
-  width: 110px;
+.signup{
+  width: 315px;
+  text-align:center;
+  margin: auto;
+  margin-bottom: 35px;
 }
-
+.singupField{
+  color: black;
+}
 .formButton{
   background-color: #56494C;
   color: white;
@@ -212,7 +242,7 @@ html { width: 100%; height:100%; overflow:hidden; }
 input { 
   width: 100%; 
   margin-bottom: 10px; 
-  background: rgba(0,0,0,0.3);
+  background-color: #f2f2f2;
   border: none;
   outline: none;
   padding: 10px;
@@ -230,55 +260,13 @@ input {
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 /* End Raymond CSS */ 
-.text-center {
-  text-align: center;
-}
 
 /* Style all input fields */
-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  background-color: #f2f2f2;
-}
 
 /* Style the submit on workout pagebutton */
-#sub {
-  background-color: #56494C;
-  color: white;
-}
-
-#sub:hover {
-  background-color: #000000;
-}
 
 /*submit button on work out page*/
-.btn-primary {
-    color: #fff;
-    background-color: #56494C;
-    border-color: #9FA4A9;
-    width: 100%;
-
-}
-.btn-primary:hover {
-    color: #fff;
-    background-color: #000000;
-    border-color: #9FA4A9;
-}
-
 /*time goal box on work out page*/
-input[type=text] {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    color: #000000;
-}
 
 
 /* Style the container for inputs */
@@ -370,17 +358,43 @@ span.price {
   border-radius: 3px;
 }
 
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+.bodyBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
 }
-
+.descSection{
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.descList{
+  padding-left: 0;
+}
+.formFieldArea{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  /*border: 2px solid #565656;
+  border-radius: 5px;*/
+  width:50%;
+}
+.worxSubmit{
+  width: 100px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.divider{
+ border: 1px solid black;
+}
 label {
   margin-bottom: 10px;
   display: block;
+  color:black;
 }
 
 .icon-container {
@@ -411,14 +425,16 @@ span.price {
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-@media (max-width: 800px) {
-}
+
 
 /* The container must be positioned relative: */
 .custom-select {
   position: relative;
   font-family: Arial;
   width: 150px;
+}
+.signupSel{
+  margin-bottom:10px;
 }
  /*hide original SELECT element: */
 /*.custom-select select {
@@ -489,29 +505,8 @@ span.price {
 }
 
 /* Style all input fields */
-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  background-color: #f2f2f2;
-  color: #000000;
-}
 
 /* Style the signin button */
-#sub {
-  background-color: #56494C;
-  color: white;
-  width: 25%;
-
-}
-
-#sub:hover {
-  background-color: #000000;
-}
 
 /* Style the container for inputs */
 
@@ -592,13 +587,6 @@ span.price {
 
 
 
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
 
 label {
   margin-bottom: 10px;
@@ -633,7 +621,13 @@ label {
 .pgError{
   margin: 180px auto;
 }
-.goHome{
+.pgSuccess{
+  margin: 194px auto;
+}
+.pgResult{
+  margin: 89px auto;
+}
+.goHome, .goLogin, .goBack{
   width: 200px;
   padding: 10px;
   margin: auto;
@@ -646,8 +640,7 @@ span.price {
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-@media (max-width: 800px) {
-}
+
 
 /* Hero */
 .hero-image {
@@ -668,4 +661,10 @@ span.price {
   transform: translate(-50%, -50%);*/
   color: white;
   /*margin-top: 15px;*/
+}
+
+@media (min-width: 450px) {
+  .bodyBox{
+    flex-direction: row;
+  }
 }

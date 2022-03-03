@@ -1,0 +1,25 @@
+<main class="container {{pageMainClass}}">
+    <div class="row text-center">
+        <h1 class="errTitle">Your result:</h1>
+        <section class="row results">
+            <div class="col-12">
+                {{#each response}}
+                {{#if this.fail}}
+                <h2>Sorry, no results!</h2>
+                {{else}}
+                <h2>Plan ID: {{this._id}}</h2>
+                <div class="row workoutResp">
+                    <h3>Time</h3>
+                    <p>{{this.time}} weeks</p>
+                </div>
+                <div class="row workoutResp">
+                    <h3>Description</h3>
+                    <p>{{this.desc}}</p>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </section>
+        <button class="goBack" id="goBack" class="btn btn-secondary">Go Back</button>
+    </div>
+</main>
