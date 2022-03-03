@@ -41,8 +41,6 @@ font-family: "Oxygen";
 background-color:  #56494C;
 color: white;
 font: 20px;
-
-
 }
 
 
@@ -71,7 +69,10 @@ color: white;
 
 }
 */
-
+.bodyCard{
+  border: 2px solid black;
+  border-radius: 5px;
+}
 /*a {
   color: #00B7FF;
 }*/
